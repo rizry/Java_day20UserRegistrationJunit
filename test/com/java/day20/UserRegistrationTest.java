@@ -28,4 +28,14 @@ public class UserRegistrationTest {
     assertFalse(reg.name("jones"));
   }
 
+  @Test
+  public void testEmailContainsRequiredCharacter_thenHappy() {
+    assertTrue(reg.email("markmanson@gmail.co.in"));
+  }
+
+  @Test
+  public void testEmailDoestContainRequiredCharacter_thenSad() {
+    assertFalse(reg.email("jack.sdf.com"));
+  }
+
 }
