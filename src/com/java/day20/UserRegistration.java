@@ -17,6 +17,12 @@ public class UserRegistration {
 
   }
 
+  public boolean phone(String phNum) {
+    regex = "^[0-9]{1,3}(-[0-9]{1,3})?\\s{0,3}[6-9]{1}[0-9]{9}$";
+    return (validate(regex, phNum));
+
+  }
+
   private static boolean validate(String regex, String input) {
     Pattern p = Pattern.compile(regex);
     Matcher m = p.matcher(input);

@@ -38,4 +38,14 @@ public class UserRegistrationTest {
     assertFalse(reg.email("jack.sdf.com"));
   }
 
+  @Test
+  public void testPhoneNumContainsCountryCodeAndSpace_thenHappy() {
+    assertTrue(reg.phone("91 8723476236"));
+  }
+
+  @Test
+  public void testPhoneNumDoestContainCountryCodeAndSpace_thenSad() {
+    assertFalse(reg.phone("8347234823"));
+  }
+
 }
