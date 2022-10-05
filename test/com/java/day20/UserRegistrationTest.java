@@ -48,4 +48,14 @@ public class UserRegistrationTest {
     assertFalse(reg.phone("8347234823"));
   }
 
+  @Test
+  public void testPasswordAtLeastEightCharacters_thenHappy() {
+    assertTrue(reg.password("jhfbalsb"));
+  }
+
+  @Test
+  public void testPasswordDoestContainEightCharacters_thenSad() {
+    assertFalse(reg.password("zcdhv"));
+  }
+
 }

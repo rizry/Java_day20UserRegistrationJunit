@@ -14,13 +14,16 @@ public class UserRegistration {
   public boolean email(String email) {
     regex = "^[a-zA-Z]+[\\w]*([.|\\-|+][a-zA-Z0-9]+)*@[\\w]{1,5}[.][a-z]{2,3}(.[a-z]{2,3})?$";
     return (validate(regex, email));
-
   }
 
   public boolean phone(String phNum) {
     regex = "^[0-9]{1,3}(-[0-9]{1,3})?\\s{0,3}[6-9]{1}[0-9]{9}$";
     return (validate(regex, phNum));
+  }
 
+  public boolean password(String pass) {
+    regex = "^\\w{8,}$";
+    return (validate(regex, pass));
   }
 
   private static boolean validate(String regex, String input) {
