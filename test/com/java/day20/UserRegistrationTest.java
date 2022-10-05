@@ -78,4 +78,14 @@ public class UserRegistrationTest {
         assertFalse(reg.password_rule3("ascdsKfsdMfdhv"));
     }
 
+    @Test
+    public void testPasswordContainsSpecialCharacters_thenHappy() {
+        assertTrue(reg.password_rule4("asd8hDfbCsl%sb"));
+    }
+
+    @Test
+    public void testPasswordDoestContainSpecialCharacter_thenSad() {
+        assertFalse(reg.password_rule4("ascdsAKfsd35MfdHhv"));
+    }
+
 }
