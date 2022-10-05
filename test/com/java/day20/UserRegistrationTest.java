@@ -2,6 +2,7 @@ package com.java.day20;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
+import java.util.Scanner;
 import org.junit.Test;
 
 public class UserRegistrationTest {
@@ -117,6 +118,33 @@ public class UserRegistrationTest {
     assertFalse(reg.email("abc@abc@gmail.com"));
     assertFalse(reg.email("abc@gmail.com.1a"));
     assertFalse(reg.email("abc@gmail.com.aa.au"));
+  }
+
+  @Test
+  public void testUserEntries_thenHappy() {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter first name: ");
+    String fName = sc.next();
+    assertTrue(reg.name(fName));
+
+    System.out.print("Enter last name: ");
+    String lName = sc.next();
+    assertTrue(reg.name(lName));
+
+    System.out.print("Enter email: ");
+    String email = sc.next();
+    assertTrue(reg.email(email));
+
+    sc.nextLine();
+    System.out.print("Enter phone number: ");
+    String phNum = sc.nextLine();
+    assertTrue(reg.phone(phNum));
+
+    System.out.print("Enter password: ");
+    String pass = sc.next();
+    assertTrue(reg.password_rule4(pass));
+
+    sc.close();
   }
 
 }
