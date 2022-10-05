@@ -31,6 +31,11 @@ public class UserRegistration {
     return (validate(regex, pass));
   }
 
+  public boolean password_rule3(String pass) {
+    regex = "^(?=.*[A-Z])(?=.*\\d)\\w{8,}$";
+    return (validate(regex, pass));
+  }
+
   private static boolean validate(String regex, String input) {
     Pattern p = Pattern.compile(regex);
     Matcher m = p.matcher(input);
