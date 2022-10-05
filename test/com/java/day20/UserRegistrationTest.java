@@ -10,12 +10,22 @@ public class UserRegistrationTest {
 
   @Test
   public void testFirstNameStartsWithCapitalLetter_thenHappy() {
-    assertTrue(reg.firstName("Mark"));
+    assertTrue(reg.name("Mark"));
   }
 
   @Test
   public void testFirstNameDoesntStartWithCapitalLetter_thenSad() {
-    assertFalse(reg.firstName("manson"));
+    assertFalse(reg.name("manson"));
+  }
+
+  @Test
+  public void testLastNameStartsWithCapitalLetter_thenHappy() {
+    assertTrue(reg.name("Smith"));
+  }
+
+  @Test
+  public void testLastNameDoesntStartWithCapitalLetter_thenSad() {
+    assertFalse(reg.name("jones"));
   }
 
 }
