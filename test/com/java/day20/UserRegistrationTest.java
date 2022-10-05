@@ -50,12 +50,22 @@ public class UserRegistrationTest {
 
   @Test
   public void testPasswordAtLeastEightCharacters_thenHappy() {
-    assertTrue(reg.password("jhfbalsb"));
+    assertTrue(reg.password_rule1("jhfbalsb"));
   }
 
   @Test
   public void testPasswordDoestContainEightCharacters_thenSad() {
-    assertFalse(reg.password("zcdhv"));
+    assertFalse(reg.password_rule1("zcdhv"));
+  }
+
+  @Test
+  public void testPasswordContainsAtLeastOneUpperCaseCharacter_thenHappy() {
+    assertTrue(reg.password_rule2("asdhDfbslsb"));
+  }
+
+  @Test
+  public void testPasswordDoestContainUpperCaseCharacter_thenSad() {
+    assertFalse(reg.password_rule2("ascsdfsdfdhv"));
   }
 
 }

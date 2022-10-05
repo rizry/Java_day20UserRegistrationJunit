@@ -21,8 +21,13 @@ public class UserRegistration {
     return (validate(regex, phNum));
   }
 
-  public boolean password(String pass) {
+  public boolean password_rule1(String pass) {
     regex = "^\\w{8,}$";
+    return (validate(regex, pass));
+  }
+
+  public boolean password_rule2(String pass) {
+    regex = "^(?=.*[A-Z])\\w{8,}$";
     return (validate(regex, pass));
   }
 
